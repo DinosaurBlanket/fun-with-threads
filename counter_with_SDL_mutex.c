@@ -23,7 +23,7 @@ int main (int argc, char **argv) {
 	
 	mutex = SDL_CreateMutex();
 	if (!mutex) {
-		fprintf(stderr, "ERROR; Could not create mutex\n");
+		printf("ERROR; Could not create mutex\n");
 		exit(2);
 	}
 	
@@ -32,7 +32,7 @@ int main (int argc, char **argv) {
 	for (t = 0; t < num_threads; t++) {
 		threads[t] = SDL_CreateThread(AddThings, "AddThings", (void *)NULL);
 		if (!threads[t]) {
-			fprintf(stderr, "ERROR; could not create thread %li\n", t);
+			printf("ERROR; could not create thread %li\n", t);
 			exit(1);
 		}
 	}

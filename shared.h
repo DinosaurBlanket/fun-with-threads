@@ -24,7 +24,7 @@ int get_num_increments(int argc, char **argv) {
 }
 
 void print_params(void) {
-	fprintf(stderr, "num_threads:    %i\nnum_increments: %i\n", num_threads, num_increments);
+	printf("num_threads:    %i\nnum_increments: %i\n", num_threads, num_increments);
 }
 
 void print_result(int result) {
@@ -33,5 +33,5 @@ void print_result(int result) {
 		fprintf(stderr, "PASS: %i\n", result);
 		return;
 	}
-	fprintf(stderr, "FAIL: %i\n", result);
+	printf("FAIL: %i\n", result);
 }

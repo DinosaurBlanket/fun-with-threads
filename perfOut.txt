@@ -1,23 +1,23 @@
 counter_race
 num_threads:    4
 num_increments: 1000000
-FAIL: 2010667
+FAIL: 1754650
 
  Performance counter stats for 'bin/counter_race 4':
 
-        125.859411      task-clock (msec)         #    2.972 CPUs utilized          
-               146      context-switches          #    0.001 M/sec                  
-                 7      cpu-migrations            #    0.056 K/sec                  
-                78      page-faults               #    0.620 K/sec                  
-       441,195,888      cycles                    #    3.505 GHz                     [82.63%]
-        11,036,860      stalled-cycles-frontend   #    2.50% frontend cycles idle    [82.72%]
-       371,374,597      stalled-cycles-backend    #   84.17% backend  cycles idle    [35.31%]
-        27,353,761      instructions              #    0.06  insns per cycle        
-                                                  #   13.58  stalled cycles per insn [53.10%]
-         4,054,533      branches                  #   32.215 M/sec                   [67.62%]
-            15,587      branch-misses             #    0.38% of all branches         [82.25%]
+        204.214845      task-clock (msec)         #    3.524 CPUs utilized          
+               235      context-switches          #    0.001 M/sec                  
+                 8      cpu-migrations            #    0.039 K/sec                  
+                77      page-faults               #    0.377 K/sec                  
+       701,247,257      cycles                    #    3.434 GHz                     [83.02%]
+        13,151,590      stalled-cycles-frontend   #    1.88% frontend cycles idle    [83.06%]
+       615,463,508      stalled-cycles-backend    #   87.77% backend  cycles idle    [34.42%]
+        29,825,133      instructions              #    0.04  insns per cycle        
+                                                  #   20.64  stalled cycles per insn [50.91%]
+         4,445,280      branches                  #   21.768 M/sec                   [66.42%]
+            23,089      branch-misses             #    0.52% of all branches         [81.99%]
 
-       0.042352860 seconds time elapsed
+       0.057954507 seconds time elapsed
 
 
 
@@ -30,19 +30,19 @@ PASS: 4000000
 
  Performance counter stats for 'bin/counter_with_mutex 4':
 
-       1203.563650      task-clock (msec)         #    2.894 CPUs utilized          
-            40,932      context-switches          #    0.034 M/sec                  
-                70      cpu-migrations            #    0.058 K/sec                  
+       1200.867148      task-clock (msec)         #    3.019 CPUs utilized          
+            40,960      context-switches          #    0.034 M/sec                  
+                24      cpu-migrations            #    0.020 K/sec                  
                 77      page-faults               #    0.064 K/sec                  
-     3,926,182,755      cycles                    #    3.262 GHz                     [84.37%]
-       924,353,374      stalled-cycles-frontend   #   23.54% frontend cycles idle    [83.51%]
-     1,480,173,433      stalled-cycles-backend    #   37.70% backend  cycles idle    [32.22%]
-     1,876,860,444      instructions              #    0.48  insns per cycle        
-                                                  #    0.79  stalled cycles per insn [49.90%]
-       525,237,109      branches                  #  436.402 M/sec                   [65.73%]
-         4,067,504      branch-misses             #    0.77% of all branches         [82.81%]
+     3,874,181,038      cycles                    #    3.226 GHz                     [82.23%]
+       863,227,272      stalled-cycles-frontend   #   22.28% frontend cycles idle    [83.08%]
+     1,472,276,313      stalled-cycles-backend    #   38.00% backend  cycles idle    [34.74%]
+     1,930,394,972      instructions              #    0.50  insns per cycle        
+                                                  #    0.76  stalled cycles per insn [51.71%]
+       543,176,481      branches                  #  452.320 M/sec                   [67.03%]
+         3,747,677      branch-misses             #    0.69% of all branches         [83.09%]
 
-       0.415913245 seconds time elapsed
+       0.397768299 seconds time elapsed
 
 
 
@@ -55,19 +55,19 @@ PASS: 4000000
 
  Performance counter stats for 'bin/counter_with_SDL_mutex 4':
 
-       1292.384925      task-clock (msec)         #    2.952 CPUs utilized          
-            44,203      context-switches          #    0.034 M/sec                  
-                17      cpu-migrations            #    0.013 K/sec                  
-               312      page-faults               #    0.241 K/sec                  
-     4,196,135,417      cycles                    #    3.247 GHz                     [84.36%]
-       941,816,322      stalled-cycles-frontend   #   22.44% frontend cycles idle    [82.35%]
-     1,442,439,213      stalled-cycles-backend    #   34.38% backend  cycles idle    [33.46%]
-     2,270,967,273      instructions              #    0.54  insns per cycle        
-                                                  #    0.64  stalled cycles per insn [50.40%]
-       667,871,185      branches                  #  516.774 M/sec                   [67.10%]
-         4,512,828      branch-misses             #    0.68% of all branches         [83.81%]
+       1325.758636      task-clock (msec)         #    2.967 CPUs utilized          
+            43,549      context-switches          #    0.033 M/sec                  
+                21      cpu-migrations            #    0.016 K/sec                  
+               311      page-faults               #    0.235 K/sec                  
+     4,290,330,541      cycles                    #    3.236 GHz                     [83.82%]
+       982,912,772      stalled-cycles-frontend   #   22.91% frontend cycles idle    [82.55%]
+     1,481,788,895      stalled-cycles-backend    #   34.54% backend  cycles idle    [33.72%]
+     2,291,705,090      instructions              #    0.53  insns per cycle        
+                                                  #    0.65  stalled cycles per insn [50.80%]
+       671,384,584      branches                  #  506.415 M/sec                   [67.85%]
+         4,816,689      branch-misses             #    0.72% of all branches         [83.35%]
 
-       0.437787173 seconds time elapsed
+       0.446774214 seconds time elapsed
 
 
 
@@ -80,19 +80,19 @@ PASS: 4000000
 
  Performance counter stats for 'bin/counter_with_spinlock 4':
 
-       2805.675231      task-clock (msec)         #    3.895 CPUs utilized          
-             2,885      context-switches          #    0.001 M/sec                  
-                 7      cpu-migrations            #    0.002 K/sec                  
-                76      page-faults               #    0.027 K/sec                  
-    10,799,651,487      cycles                    #    3.849 GHz                     [83.28%]
-     6,631,955,125      stalled-cycles-frontend   #   61.41% frontend cycles idle    [83.29%]
-     2,667,968,662      stalled-cycles-backend    #   24.70% backend  cycles idle    [33.45%]
-       568,976,028      instructions              #    0.05  insns per cycle        
-                                                  #   11.66  stalled cycles per insn [50.13%]
-       264,795,566      branches                  #   94.379 M/sec                   [66.72%]
-         3,684,884      branch-misses             #    1.39% of all branches         [83.25%]
+       2854.676938      task-clock (msec)         #    3.917 CPUs utilized          
+             2,940      context-switches          #    0.001 M/sec                  
+                 6      cpu-migrations            #    0.002 K/sec                  
+                77      page-faults               #    0.027 K/sec                  
+    11,007,998,568      cycles                    #    3.856 GHz                     [83.35%]
+     6,755,660,025      stalled-cycles-frontend   #   61.37% frontend cycles idle    [83.37%]
+     2,754,023,873      stalled-cycles-backend    #   25.02% backend  cycles idle    [33.33%]
+       532,300,398      instructions              #    0.05  insns per cycle        
+                                                  #   12.69  stalled cycles per insn [50.02%]
+       250,546,924      branches                  #   87.767 M/sec                   [66.66%]
+         3,798,212      branch-misses             #    1.52% of all branches         [83.24%]
 
-       0.720381850 seconds time elapsed
+       0.728789897 seconds time elapsed
 
 
 
@@ -105,19 +105,19 @@ PASS: 4000000
 
  Performance counter stats for 'bin/counter_with_SDL_spinlock 4':
 
-        208.062318      task-clock (msec)         #    1.570 CPUs utilized          
-             5,880      context-switches          #    0.028 M/sec                  
-                13      cpu-migrations            #    0.062 K/sec                  
-               313      page-faults               #    0.002 M/sec                  
-       466,724,874      cycles                    #    2.243 GHz                     [86.15%]
-       176,074,083      stalled-cycles-frontend   #   37.73% frontend cycles idle    [78.24%]
-       102,839,390      stalled-cycles-backend    #   22.03% backend  cycles idle    [36.72%]
-       167,676,071      instructions              #    0.36  insns per cycle        
-                                                  #    1.05  stalled cycles per insn [52.94%]
-        51,127,611      branches                  #  245.732 M/sec                   [71.00%]
-           220,576      branch-misses             #    0.43% of all branches         [86.16%]
+        217.822103      task-clock (msec)         #    1.604 CPUs utilized          
+             5,171      context-switches          #    0.024 M/sec                  
+                11      cpu-migrations            #    0.050 K/sec                  
+               313      page-faults               #    0.001 M/sec                  
+       523,462,360      cycles                    #    2.403 GHz                     [85.09%]
+       171,837,251      stalled-cycles-frontend   #   32.83% frontend cycles idle    [82.36%]
+       146,715,441      stalled-cycles-backend    #   28.03% backend  cycles idle    [33.34%]
+       160,871,688      instructions              #    0.31  insns per cycle        
+                                                  #    1.07  stalled cycles per insn [49.93%]
+        49,999,452      branches                  #  229.543 M/sec                   [68.66%]
+           188,213      branch-misses             #    0.38% of all branches         [86.02%]
 
-       0.132491001 seconds time elapsed
+       0.135763214 seconds time elapsed
 
 
 
@@ -130,19 +130,19 @@ PASS: 4000000
 
  Performance counter stats for 'bin/counter_with_atomics 4':
 
-        949.959222      task-clock (msec)         #    3.633 CPUs utilized          
-               978      context-switches          #    0.001 M/sec                  
-                 7      cpu-migrations            #    0.007 K/sec                  
-                79      page-faults               #    0.083 K/sec                  
-     3,666,486,604      cycles                    #    3.860 GHz                     [83.34%]
-        48,601,412      stalled-cycles-frontend   #    1.33% frontend cycles idle    [83.41%]
-     3,411,095,265      stalled-cycles-backend    #   93.03% backend  cycles idle    [33.36%]
-        29,408,923      instructions              #    0.01  insns per cycle        
-                                                  #   115.99  stalled cycles per insn [50.20%]
-         5,830,160      branches                  #    6.137 M/sec                   [66.68%]
-            44,943      branch-misses             #    0.77% of all branches         [83.17%]
+        951.962725      task-clock (msec)         #    3.604 CPUs utilized          
+               979      context-switches          #    0.001 M/sec                  
+                 8      cpu-migrations            #    0.008 K/sec                  
+                78      page-faults               #    0.082 K/sec                  
+     3,656,714,400      cycles                    #    3.841 GHz                     [83.16%]
+        48,215,413      stalled-cycles-frontend   #    1.32% frontend cycles idle    [83.30%]
+     3,390,996,448      stalled-cycles-backend    #   92.73% backend  cycles idle    [33.62%]
+        30,136,289      instructions              #    0.01  insns per cycle        
+                                                  #   112.52  stalled cycles per insn [50.40%]
+         5,912,149      branches                  #    6.210 M/sec                   [66.89%]
+            44,436      branch-misses             #    0.75% of all branches         [83.35%]
 
-       0.261498077 seconds time elapsed
+       0.264135275 seconds time elapsed
 
 
 
@@ -155,17 +155,17 @@ PASS: 4000000
 
  Performance counter stats for 'bin/counter_with_SDL_atomics 4':
 
-       1384.670187      task-clock (msec)         #    3.170 CPUs utilized          
-             1,420      context-switches          #    0.001 M/sec                  
-                11      cpu-migrations            #    0.008 K/sec                  
-               312      page-faults               #    0.225 K/sec                  
-     5,319,412,331      cycles                    #    3.842 GHz                     [83.41%]
-     2,058,753,939      stalled-cycles-frontend   #   38.70% frontend cycles idle    [83.28%]
-     2,751,705,443      stalled-cycles-backend    #   51.73% backend  cycles idle    [33.42%]
-        74,659,106      instructions              #    0.01  insns per cycle        
-                                                  #   36.86  stalled cycles per insn [50.15%]
-        23,992,139      branches                  #   17.327 M/sec                   [66.74%]
-            84,766      branch-misses             #    0.35% of all branches         [83.33%]
+       1496.042455      task-clock (msec)         #    3.837 CPUs utilized          
+             1,559      context-switches          #    0.001 M/sec                  
+                10      cpu-migrations            #    0.007 K/sec                  
+               314      page-faults               #    0.210 K/sec                  
+     5,733,142,153      cycles                    #    3.832 GHz                     [83.45%]
+     2,146,075,188      stalled-cycles-frontend   #   37.43% frontend cycles idle    [83.31%]
+     3,056,010,966      stalled-cycles-backend    #   53.30% backend  cycles idle    [33.34%]
+        75,518,540      instructions              #    0.01  insns per cycle        
+                                                  #   40.47  stalled cycles per insn [50.13%]
+        24,214,850      branches                  #   16.186 M/sec                   [66.76%]
+            93,790      branch-misses             #    0.39% of all branches         [83.30%]
 
-       0.436840431 seconds time elapsed
+       0.389865363 seconds time elapsed
 
