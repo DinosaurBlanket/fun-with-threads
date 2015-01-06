@@ -25,7 +25,7 @@ int main (int argc, char **argv) {
 	for (t = 0; t < num_threads; t++) {
 		int rc = pthread_create(&threads[t], NULL, AddThings, (void *)t);
 		if (rc) {
-			printf("ERROR; return code from pthread_create() is %d\n", rc);
+			fprintf(stderr, "ERROR; return code from pthread_create() is %d\n", rc);
 			exit(1);
 		}
 	}

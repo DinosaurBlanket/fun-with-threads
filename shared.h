@@ -24,14 +24,14 @@ int get_num_increments(int argc, char **argv) {
 }
 
 void print_params(void) {
-	printf("num_threads:    %i\nnum_increments: %i\n", num_threads, num_increments);
+	fprintf(stderr, "num_threads:    %i\nnum_increments: %i\n", num_threads, num_increments);
 }
 
 void print_result(int result) {
 	int expected = num_threads * num_increments;
 	if (result == expected) {
-		printf("PASS: %i\n", result);
+		fprintf(stderr, "PASS: %i\n", result);
 		return;
 	}
-	printf("FAIL: wanted %i but got %i\n", expected, result);
+	fprintf(stderr, "FAIL: %i\n", result);
 }
