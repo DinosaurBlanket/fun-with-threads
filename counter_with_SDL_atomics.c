@@ -1,15 +1,16 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <SDL2/SDL.h>
 #include "shared.h"
 
-int counter;
+SDL_atomic_t counter;
 
-void *AddThings(void *threadid) {
+int AddThings(void *unused) {
 	for (int i = 0; i < num_increments; i++) {
-		__sync_add_and_fetch(&counter, 1);
+		SDL_AtomicIncRef(&counter);
 	}
-	pthread_exit(NULL);
+	return 0;
 }
 
 int main (int argc, char **argv) {
@@ -17,17 +18,16 @@ int main (int argc, char **argv) {
 	num_increments = get_num_increments(argc, argv);
 	print_params();
 	
-	pthread_t threads[num_threads];
+	SDL_Thread *threads[num_threads];
 	long t;
 	for (t = 0; t < num_threads; t++) {
-		int rc = pthread_create(&threads[t], NULL, AddThings, (void *)t);
-		if (rc) {
-			printf("ERROR; return code from pthread_create() is %d\n", rc);
+		threads[t] = SDL_CreateThread(AddThings, "AddThings", (void *)NULL);
+		if (!threads[t]) {
+			printf("ERROR; could not create thread %li\n", t);
 			exit(1);
 		}
 	}
 	for (t = 0; t < num_threads; t++)
-		pthread_join(threads[t], NULL);
-	print_result(counter);
-	pthread_exit(NULL);
+		SDL_WaitThread(threads[t], NULL);
+	print_result(SDL_AtomicGet(&counter));
 }

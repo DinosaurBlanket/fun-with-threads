@@ -2,7 +2,6 @@
 #define DEFAULT_NUM_INCREMENTS  1e6
 #define MAX_THREAD_COUNT      120
 
-int counter;
 int num_threads;
 int num_increments;
 
@@ -28,11 +27,11 @@ void print_params(void) {
 	printf("num_threads:    %i\nnum_increments: %i\n", num_threads, num_increments);
 }
 
-void print_result(void) {
+void print_result(int result) {
 	int expected = num_threads * num_increments;
-	if (counter == expected) {
-		printf("The result is correct: %i\n", counter);
+	if (result == expected) {
+		printf("PASS: %i\n", result);
 		return;
 	}
-	printf("The result is NOT correct, wanted %i but got %i\n", expected, counter);
+	printf("FAIL: wanted %i but got %i\n", expected, result);
 }

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "shared.h"
 
+int counter;
 
 void *AddThings(void *threadid)
 {
@@ -28,6 +29,6 @@ int main (int argc, char **argv) {
 	// Wait for threads to finish
 	for (t = 0; t < num_threads; t++)
 			pthread_join(threads[t], NULL);
-	print_result();
+	print_result(counter);
 	pthread_exit(NULL);
 }
